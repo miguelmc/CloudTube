@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+  <head>
+    <title><%= title %></title>
+    <link rel="icon" type="image/png" href="/img/pp-flavicon.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/lib/angular-carousel/dist/angular-carousel.css" rel="stylesheet" type="text/css" />
+    <link href="/lib/angular-material/angular-material.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <script src="/js/jquery-2.2.0.min.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="top-bar">
+        <a href="/#!/"><img src="img/logo.png" title="CloudTube"></a>
+        <a href="/about"><div class="nav">About</div></a>
+      </div>
+
+      <section ng-view></section>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="footer-content">
+        <p>Miguel Martinez Chapa | Luis Gerardo Delgado Marcos</p>
+        <p>This application is purely recreative and we do not encourage the abuse of file uploading.</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      window.user = <%- user || 'null' %>;
+    </script>
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/lib/angular-touch/angular-touch.js"></script>
+    <script type="text/javascript" src="/lib/angular-carousel/dist/angular-carousel.js"></script>
+    <script type="text/javascript" src="/lib/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="/lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="/lib/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="/lib/angular-messages/angular-messages.js"></script>
+    <script type="text/javascript" src="/lib/ng-file-upload/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="/lib/ng-file-upload/ng-file-upload-shim.min.js"></script>
+
+    <!-- Index--> 
+    <script type="text/javascript" src="/index/index.client.module.js"></script>
+    <script type="text/javascript" src="/index/controllers/index.client.controller.js"></script>
+    <script type="text/javascript" src="/index/config/index.client.routes.js"></script>
+
+    <!-- Users --> 
+    <script type="text/javascript" src="/users/users.client.module.js"></script>
+    <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+    <script type="text/javascript" src="/application.js"></script>
+  </body>
+</html>
