@@ -1,0 +1,449 @@
+/* BASE STYLING */
+html {
+  background: transparent;
+  width: 100%;
+  height: 100%
+}
+body {
+  width: 100%; height: 100% margin: 0;
+  padding: 0;
+  background-color: #333451;
+  font-family: 'Arvo', Courier, sans-serif;
+  color: #f2ebd8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefin Sans', Futura, sans-serif;
+  font-weight: 700;
+}
+
+a, a:visited {
+  color: #f58548;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.center {
+  text-align: center;
+}
+
+#entry-image ul {
+  text-align: center;
+}
+
+#entry-image li {
+  vertical-align: top;
+  padding: 1em;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.orangered {
+  color: orangered;
+}
+
+#all-images {
+  text-align: center;
+  padding: 2em;
+}
+
+/* TOP BAR STYLING */
+#top-bar {
+  width: 100%;
+  /*position: fixed;*/
+  top: 0;
+  z-index: 100;
+  background-color: #282938;
+  height: 84px;
+
+  font-family: 'Josefin Sans', Futura, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#top-bar img {
+  height: 64px;
+  width: auto;
+  padding: 10px 30px;
+  display: inline-block;
+}
+
+.nav, .nav a, .nav a:visited {
+  display: inline-block;
+  float: right;
+  padding: 20px;
+  margin: 0px 4px;
+  color: #ec4e4e;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav:hover {
+  border-bottom: 4px solid #f58548;
+}
+
+#add-article {
+  text-align: right;
+}
+
+/* BODY CONTENT STYLING */
+#content {
+  /*margin-top: 84px;*/
+  margin: auto;
+  width: 70%;
+}
+
+#new-author-form {
+  margin: auto;
+  width: 80%;
+}
+
+#new-issue-form {
+  margin: auto;
+  width: 80%;
+}
+
+#issue-list, #entry-list{
+  padding-right: 2em;
+  text-align: right;
+}class="center"
+
+#single-entry{
+  margin: auto;
+  width: 90%;
+  float: right;
+  border: 5px;
+  border-top: 5px groove threedface;
+  padding: 3em 0;
+}
+
+#single-entry2{
+  margin: auto;
+  width: 90%;
+  border: 5px;
+  text-align: right;
+  padding: 3em 0;
+}
+
+#login-form {
+  margin: auto;
+  width: 30%;
+  margin-top: 100px;
+}
+
+.abstract {
+  text-align: left;
+  display: block;
+}
+
+
+/*.abstract li {
+  display: inline-block;
+  padding-right: 20px;
+}*/
+
+.button-center {
+  text-align: center;
+}
+
+.flash {
+  text-align: center;
+  color: red;
+}
+
+.page-content {
+  padding: 30px 120px;
+}
+
+.page-content h1, .page-content h2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 60px;
+  border-bottom: 4px solid #ec4e4e;
+  color: #ec4e4e;
+}
+
+.page-content h2 {
+  margin-bottom: 10px;
+  border-bottom: 4px dashed #f58548;
+  color: #f58548;
+}
+
+.page-content p {
+  letter-spacing: 0.5px;
+  line-height: 21px;
+  padding: 0px 20px;
+}
+
+.page-content .column {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+/* STEP CAROUSEL STYLING */
+.stepcarousel {
+  position: relative; /*leave this value alone*/
+  overflow: hidden; /*leave this value alone*/
+  width: 100%; /*Width of Carousel Viewer itself*/
+  height: 480px; /*Height should enough to fit largest content's height*/
+  background-color: #000;
+  -webkit-box-sizing: border-box; /* set box model so container width and height value includes any padding/border defined */
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.stepcarousel .belt {
+  position: absolute; /*leave this value alone*/
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.stepcarousel .panel {
+  float: left; /*leave this value alone*/
+  /*overflow: hidden; clip content that go outside dimensions of holding panel DIV*/
+  width: 100%; /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+  height: 480px;
+  z-index: 1;
+}
+
+.stepcarousel .panel img {
+  width: 20%;
+  height: auto;
+  opacity: 0.6;
+  position: absolute;
+  z-index: 3;
+}
+
+.panel-content {
+  padding: 40px 100px;
+  width: 700px;
+  z-index: 5;
+  position: absolute;
+}
+
+#mygallery-paginate {
+  position: absolute;
+  margin-top: 410px;
+  margin-left: 560px;
+  z-index: 50;
+}
+
+span.paginatecircle { /* CSS for paginate circle spans. Required */
+  background: #f58548;
+  border: 2px solid #ec4e4e;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+span.paginatecircle:hover {background: gray;}
+span.paginatecircle.selected {background: #ec4e4e;}
+
+
+
+
+
+
+
+
+/* SEARCH BAR STYLING */
+.box {
+  margin: 20px auto;
+  width: 300px;
+  height: 50px;
+}
+
+.container-1 {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#search {
+  width: 300px;
+  height: 50px;
+  background: #282938;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.container-1 .icon {
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+#advanced-search {
+  text-align: center;
+}
+.wrapper {
+  min-height:100%;
+  margin: 0 auto -155px;
+}
+
+/* FOOTER STYLING */
+#footer, .push {
+  height: 155px; /* '.push' must be the same height as 'footer' */
+}
+
+#footer {
+  background-color: #282938;
+}
+
+.footer-content {
+  padding: 20px 100px;
+  text-align: center;
+  font-family: 'Josefin-Sans', Futura, sans-serif;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+
+
+
+/*#slides {
+  margin-top: 4rem;
+}
+#slide-arrows {
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  z-index: 10;
+}
+#slide-left {
+  float: left;
+  width: 15%;
+}
+#slide-right {
+  float: right;
+  width: 15%;
+}
+#sleft {
+  width: 100%;
+  background: none;
+  border-color: none;
+  border-style: none;
+}
+#sright {
+  width: 100%;
+  background: none;
+  border-color: none;
+  border-style: none;
+}
+#slide-indicators {
+  position: fixed;
+  top: 30rem;
+  z-index: 10;
+}
+#circle {
+  float: left;
+  width: 5%;
+}
+#search-go {
+  width: 100%;
+  background: none;
+  border-color: none;
+  border-style: none;
+}
+#search-box {
+  width: 100%;
+  height: 1.75rem;
+}
+#advanced {
+  padding: 1rem 0;
+  text-align: center;
+}
+.slide {
+  width: 100%;
+  display: none;
+}
+#articles {
+  width: 80%;
+  margin: 4rem auto 1rem auto;
+}
+.abc-article-section {
+  width: 100%;
+  margin: 2rem 0;
+}
+.article {
+  width: 20%;
+  margin: 0 2.5%;
+  background-color: white;
+  box-shadow: 0px 2px 2px 1px rgb(100, 100, 100);
+}*/
+
+#slides_control > div{
+  height: 200px;
+}
+
+#carousel-img{
+  margin: auto;
+  width: 100%;
+}
+
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+  margin-left:-200px;
+}
+
+#indicators {
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  z-index: -1; position:relative
+}
+
+/* Progress Bars for upload */
+.thumb {
+  width: 24px;
+  height: 24px;
+  float: none;
+  position: relative;
+  top: 7px;
+}
+
+form .progress {
+  line-height: 15px;
+}
+
+.progress {
+  display: inline-block;
+  width: 100px;
+  border: 3px groove #CCC;
+}
+
+.progress div {
+  font-size: smaller;
+  background: orange;
+  width: 0;
+}
