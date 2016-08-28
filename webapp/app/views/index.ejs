@@ -18,7 +18,9 @@
     <div class="wrapper">
       <div id="top-bar">
         <a href="/#!/"><img src="img/logo.png" title="CloudTube"></a>
+        <a href="/#!/"><div class="nav-title"><h1>CloudTube</h1></div></a>
         <a href="/about"><div class="nav">About</div></a>
+        <a href="/#!/videos"><div class="nav">Videos</div></a>
       </div>
 
       <section ng-view></section>
@@ -50,6 +52,13 @@
     <script type="text/javascript" src="/index/index.client.module.js"></script>
     <script type="text/javascript" src="/index/controllers/index.client.controller.js"></script>
     <script type="text/javascript" src="/index/config/index.client.routes.js"></script>
+
+  <!-- Videos --> 
+    <script type="text/javascript" src="/videos/videos.client.module.js"></script>
+    <script type="text/javascript" src="/videos/controllers/videos.client.controller.js"></script>
+    <script type="text/javascript" src="/videos/services/videos.client.service.js"></script>
+    <script type="text/javascript" src="/videos/config/videos.client.routes.js"></script>
+
 
     <!-- Users --> 
     <script type="text/javascript" src="/users/users.client.module.js"></script>

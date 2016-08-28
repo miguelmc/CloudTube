@@ -1,0 +1,47 @@
+<section data-ng-controller="EntriesController" data-ng-init="findOne()" id="content">
+
+  <h1 class="center">{{entry.author}}</h1>
+  <div data-ng-show="authentication.user" layout-gt-sm="row">
+    <md-button href="/#!/entries/{{entry._id}}/edit">Edit</md-button>
+    <md-button class="md-warn" data-ng-click="delete();">Delete</md-button>
+  </div>
+  <h2 class="center">{{entry.titleEn}}</h1>
+  <h2 class="center">[{{entry.titlePt}}]</h1>
+  <div>
+    <small>
+      <em>Posted on</em>
+      <em data-ng-bind="entry.created | date:'mediumDate'"></em>
+    </small>
+  </div> 
+  <br>
+  <a ng-if="entry.pdf" href="/file/{{entry.pdf}}">Link to pdf</a>
+
+
+  <h2>Abstract</h2>
+  <p><strong>Keywords:</strong>
+    <span ng-repeat="word in entry.keywordsEn">{{word}}<span data-ng-show="!$last">, </span></span>
+  </p>
+  <p>{{entry.abstractDescEn}}</p>
+
+  <h2>Resumo</h1>
+  <p><strong>Palavras-chave:</strong>
+    <span ng-repeat="word in entry.keywordsPt">{{word}}<span data-ng-show="!$last">, </span></span>
+  </p>
+  <p>{{entry.abstractDescPt}}</p>
+
+  <h3 data-ng-bind="entry.type"></h3>
+
+  <!-- TODO: Populate issue in mongo -->
+  <h3 data-ng-bind="entry.issue"></h3> 
+
+
+  <div id="all-images">
+    <h2 id="view-entry-images">Images</h2>
+    <div id="entry-image">
+      <li ng-repeat="image in entry.images">
+        <img ng-src="/file/{{image}}" width="100" ng-click="openDialog($event, image)">
+      </li> 
+    </div>
+  </div>
+  
+</section>

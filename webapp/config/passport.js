@@ -18,5 +18,4 @@ module.exports = function() {
   });
 
   require('./strategies/local.js')();
-  require('./strategies/youtube.js')();
 };

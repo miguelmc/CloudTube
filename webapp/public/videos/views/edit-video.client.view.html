@@ -1,0 +1,124 @@
+<section data-ng-controller="EntriesController" data-ng-init="findOne()" id="content">
+  <h1>Edit Entry</h1>
+  <md-content layout-padding id="new-issue-form" >
+    <form name="newEntry" data-ng-submit="newEntry.$valid && update()" novalidate>
+        <h3 ng-bind="titleEn"></h3>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Author</label>
+            <input data-ng-model="entry.author" required>
+            <div ng-messages>
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Type of document</label>
+            <md-select ng-model="entry.type" required>
+              <md-option value="">---Please select---</md-option>
+              <md-option value="Article">Article</md-option>
+              <md-option value="Document">Document</md-option>
+              <md-option value="Review">Review</md-option>
+              <md-option value="Tribute">Tribute</md-option>
+            </md-select>
+            <div ng-messages>
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <button ngf-select="addEntryPdf($files, $invalidFiles)" multiple
+            accept="application/pdf"> <!--ngf-max-height="1000" ngf-max-size="1MB">-->
+            Upload pdf</button>
+            <ul>
+              <li style="font:smaller">{{pdf.name}} {{pdf.$errorParam}}
+              <span class="progress" ng-show="pdf.progress >= 0">
+                <div style="width:{{pdf.progress}}%"  
+                  ng-bind="pdf.progress + '%'"></div>
+              </span>
+              </li>
+              <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+              </li> 
+            </ul>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>English Title</label>
+          <input data-ng-model="entry.titleEn" required>
+          <div ng-messages>
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Portuguese Title</label>
+          <input data-ng-model="entry.titlePt" required>
+          <div ng-messages>
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Issue it belongs to</label>
+          <input ng-model="entry.issue" required>
+          <div ng-messages>
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <h2 class="md-title">English Keywords (Press enter after each keyword)</h2>
+        <md-chips ng-model="entry.keywordsEn" readonly="false"></md-chips>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Abstract</label>
+          <textarea name="abstractDescEn" data-ng-model="entry.abstractDescEn"></textarea>
+          <div ng-messages>
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <h2 class="md-title">Portuguese Keywords (Press enter after each keyword)</h2>
+        <md-chips ng-model="entry.keywordsPt" readonly="false"></md-chips>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Abstract</label>
+          <textarea name="abstractDescPt" data-ng-model="entry.abstractDescPt"></textarea>
+          <div ng-messages>
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <md-button class="md-raised md-primary" ngf-select="addImages($files, $invalidFiles)" multiple
+            accept="image/*"> <!--ngf-max-height="1000" ngf-max-size="1MB">-->
+            Upload images</md-button>
+            <ul>
+              <div id="entry-image" >
+              <li ng-repeat="image in imageFiles" style="font:smaller">
+              {{image.name}} {{image.$errorParam}}
+              <span class="progress" ng-show="image.progress >= 0">
+                <div style="width:{{image.progress}}%"  
+                  ng-bind="image.progress + '%'">
+                </div>
+              </span>
+                <img ngf-thumbnail="image || '/thumb.jpg'" width="100" >
+              </li>
+              <li ng-repeat="f in imgErrFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+              </li> 
+              </div>
+            </ul>
+        </md-input-container>
+
+      <md-button type="submit" class="md-raised">Submit</md-button>
+      <div data-ng-show="error" class="put-center">
+        <strong class="flash" data-ng-bind="error"></strong>
+      </div>
+  
+    </form>
+  </md-content>
+
+
+
+</section>

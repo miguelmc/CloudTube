@@ -1,7 +1,7 @@
 var mainApplicationModuleName = "cloudtube";
 
 var mainApplicationModule = angular.module(mainApplicationModuleName,
-                       ['ngResource', 'ngMaterial', 'ngRoute', 'ngFileUpload', 'users', 'index']);
+                       ['ngResource', 'ngMaterial', 'ngRoute', 'ngFileUpload', 'users', 'index', 'videos']);
 
 // This makes it indexable by search engine crawlers.
 mainApplicationModule.config(['$locationProvider',

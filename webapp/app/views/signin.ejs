@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+  <head>
+    <title><%= title %></title>
+    <link rel="icon" type="image/png" href="/img/pp-flavicon.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/lib/angular-material/angular-material.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <script src="/js/jquery-2.2.0.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div id="top-bar">
+        <a href="/#!/"><img src="img/logo.png" title="CloudTube"></a>
+        <a href="/#!/"><div class="nav">Sobre<br>About</div></a>
+      </div>
+
+      <md-content layout-padding id="login-form" >
+        <% for (var i in messages) { %>
+          <div class="flash"><%= messages[i] %></div>
+        <% } %>
+        <form action="/signin" method="post" novalidate>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Username</label>
+            <input name="username" id="username-box"required>
+            <div ng-messages>
+              <div ng-message="required">Enter a username</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Password</label>
+            <input name="password" type="password" required>
+            <div ng-messages>
+              <div ng-message="required">Enter a password</div>
+            </div>
+          </md-input-container>
+          <div class="button-center">
+            <md-button type="submit" class="md-raised md-primary">Sign in</md-button>
+          </div>
+        </form>
+      </md-content>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="footer-content">
+        <p>Miguel Martinez Chapa | Luis Gerardo Delgado Marcos</p>
+        <p>This application is purely recreative and we do not encourage the abuse of file uploading.</p>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="/lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="/lib/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="/lib/angular-messages/angular-messages.js"></script>
+
+    <script>
+        var signInModuleName = "signin";
+        var signInModule = angular.module(signInModuleName,
+                              ['ngMaterial']);
+        angular.element(document).ready(function() {
+          angular.bootstrap(document, [signInModuleName]);
+        });
+        $(function() {
+          $("#username-box").focus();
+        });
+    </script>
+  </body>
+</html>

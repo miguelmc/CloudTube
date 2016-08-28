@@ -46,7 +46,7 @@ def main(argv):
 
                 #Upload video to youtube
                 subprocess.call("youtube-upload --title=\"" + fullname + "\" " + fullname + ".mp4", shell=True)
-                subprocess.call("rm "  + fullname, shell=True)
+                subprocess.call("rm "  + fullname + ".mp4", shell=True)
 
 
         # Return the number of mp4s made.

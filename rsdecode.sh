@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat rs16encode | ./ezpwd-reed-solomon/rsencode_16 --decode
+cat $1 | ./ezpwd-reed-solomon/rsencode_16 --decode > cuatro

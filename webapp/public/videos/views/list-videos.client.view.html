@@ -1,0 +1,18 @@
+<section data-ng-controller="VideosController" data-ng-init="find()" id="content">
+  <h1 data-ng-bind="title"></h1>
+  <md-button href="/#!/videos/create">Create new video</md-button>
+  <ul id="entry-list">
+    <li data-ng-repeat="video in videos" class="list-single-entry">
+      <hr>
+      <h2><a data-ng-href="#!/videos/{{video._id}}">{{video.title}}</a></h2>
+      <div layout-gt-sm="row" layout-align="end center">
+          <md-button ng-show="video.pdf" class="orangered" href="/file/{{video.pdf}}">Download</md-button>
+      </div>
+
+      <!-- Probably need to add confirmation on deletion  -->
+      <div data-ng-show="authentication.user" layout-gt-sm="row" layout-align="end center">
+        <md-button class="md-warn" data-ng-click="delete(video);">Delete</md-button>
+      </div>
+    </li>
+  </ul>
+</section>

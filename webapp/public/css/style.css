@@ -87,6 +87,17 @@ ul {
   color: #ec4e4e;
   text-decoration: none;
   text-align: center;
+  padding-top: 30px;
+}
+
+.nav-title {
+  display: inline-block;
+  padding: 20px;
+  margin: 0px 4px;
+  padding-bottom: 80px;
+  color: #ec4e4e;
+  text-decoration: none;
+  vertical-align: middle;
 }
 
 .nav:hover {

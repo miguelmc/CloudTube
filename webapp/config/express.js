@@ -36,9 +36,9 @@ module.exports = function() {
   app.use(passport.initialize());
   app.use(passport.session());
 
-//  require('../app/routes/users.server.routes.js')(app);
+  require('../app/routes/videos.server.routes.js')(app);
   require('../app/routes/index.server.routes.js')(app);
-//  require('../app/routes/issues.server.routes.js')(app);
+  require('../app/routes/users.server.routes.js')(app);
 //  require('../app/routes/entries.server.routes.js')(app);
 //  require('../app/routes/authors.server.routes.js')(app);
 //  require('../app/routes/files.server.routes.js')(app);

@@ -1,0 +1,39 @@
+<section data-ng-controller="VideosController as ctrl" id="content">
+  <h1>New Video</h1>
+  <md-content layout-padding id="new-issue-form" >
+    <form name="newEntry" 
+          data-ng-submit="newEntry.$valid && ctrl.selectedItem && create(ctrl.selectedItem)" novalidate>
+        <h3 ng-bind="titleEn"></h3>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Title</label>
+          <input data-ng-model="title" required>
+          <div ng-messages>
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <button ngf-select="upload($file)" multiple
+            > <!--ngf-max-height="1000" ngf-max-size="1MB">-->
+            Upload file</button>
+            <ul>
+              <li style="font:smaller">{{pdf.name}} {{pdf.$errorParam}}
+              <span class="progress" ng-show="pdf.progress >= 0">
+                <div style="width:{{pdf.progress}}%"  
+                  ng-bind="pdf.progress + '%'"></div>
+              </span>
+              </li>
+              <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+              </li> 
+            </ul>
+        </md-input-container>
+
+      <md-button type="submit" class="md-raised">Submit</md-button>
+      <div data-ng-show="error" class="put-center">
+        <strong class="flash" data-ng-bind="error"></strong>
+      </div>
+  
+    </form>
+  </md-content>
+</section>
