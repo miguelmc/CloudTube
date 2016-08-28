@@ -1,11 +1,16 @@
 <section ng-controller=IndexController id="home-content">
+  
+  <div class="center">
+  <h1>Make youtube great again!...</h1>
+  <h3>...by making it an unlimited cloud storage service<h3>
 
   <div data-ng-show="!authentication.user" >
-    <p>Admin? <a href="/signin">Sign in</a></p>
+    <p>User? <a href="/signin">Sign in</a></p>
   </div>
   <div data-ng-show="authentication.user">
     <p>Signed in as <span data-ng-bind="authentication.user.username"></span>
     <a href="/signout"> Sign out</a></p>
   </div>
+  <div>
 
 </section>

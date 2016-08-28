@@ -45,7 +45,7 @@ exports.requiresAdmin = function(req, res, next) {
   // Consider this if project requirements ever change.
   if (!req.isAuthenticated()) {
     return res.status(401).send({
-      message: 'You are not logged in as admin'
+      message: 'You are not logged in'
     });
   }
 

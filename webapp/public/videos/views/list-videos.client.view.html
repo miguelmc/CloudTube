@@ -4,9 +4,9 @@
   <ul id="entry-list">
     <li data-ng-repeat="video in videos" class="list-single-entry">
       <hr>
-      <h2><a data-ng-href="#!/videos/{{video._id}}">{{video.title}}</a></h2>
+      <h2>{{video.title}}</h2>
       <div layout-gt-sm="row" layout-align="end center">
-          <md-button ng-show="video.pdf" class="orangered" href="/file/{{video.pdf}}">Download</md-button>
+          <md-button class="orangered" href="/file/{{video.pdf}}">Download</md-button>
       </div>
 
       <!-- Probably need to add confirmation on deletion  -->

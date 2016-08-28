@@ -3,39 +3,46 @@ angular.module('videos').controller('VideosController',
     function($scope, $routeParams, $location, $mdDialog, $timeout, Upload, Authentication, Videos, $log, $q) {
       $scope.authentication = Authentication;
 
-      $scope.upload = function(video) {
-        entry = $scope.pdf;
+      $scope.addVideoPdf = function(files, errFiles) {
+        $scope.pdf = files[0];
+        $scope.errFiles= errFiles;
+      } 
+
+      $scope.uploadPdf = function(entry) {
+
+        pdf = $scope.pdf;
         if (typeof pdf != 'object') return;
 
-        entry.upload = Upload.upload({
-          url: 'file',
-          data: {file: entry}
+        pdf.upload = Upload.upload({
+            url: 'file',
+            data: {file: pdf}
         });
 
-        entry.upload.then(function (response) {
-          $timeout(function () {
-            entry.result = response.data;
-            video.pdf = entry.result;
-            video.$update();
-          });
+        pdf.upload.then(function (response) {
+            $timeout(function () {
+                pdf.result = response.data;
+                entry.pdf = pdf.result;
+                entry.$update();
+            });
         }, function (response) {
-          if (response.status > 0)
-          $scope.errorMsg = response.status + ': ' + response.data;
+            if (response.status > 0)
+                $scope.errorMsg = response.status + ': ' + response.data;
         }, function (evt) {
-          entry.progress = Math.min(100, parseInt(100.0 * 
-                                                  evt.loaded / evt.total));
+            pdf.progress = Math.min(100, parseInt(100.0 * 
+                                    evt.loaded / evt.total));
         });
       }
 
-      $scope.create = function(author) {
+      $scope.create = function() {
         var entry = new Videos({
           title: this.title,
-          user: this.user._id,
+          user: $scope.authentication.user._id,
           links: this.links,
         });
 
         entry.$save(function(response) {
-          $location.path('videos/' + response._id);
+          //$scope.uploadPdf(entry);
+          $location.path('videos/');
         }, function(errorResponse) {
           console.log(errorResponse.data.message);
           $scope.error = errorResponse.data.message;
@@ -44,7 +51,7 @@ angular.module('videos').controller('VideosController',
 
       $scope.update = function() {
         $scope.entry.$update(function() {
-          $location.path('videos/' + $scope.entry._id);
+          $location.path('videos/');
         }, function(errorResponse) {
           $scope.error = errorResponse.data.message;
         });

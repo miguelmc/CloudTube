@@ -10,6 +10,9 @@ var VideoSchema = new Schema({
   user: {
     type: Schema.ObjectId,
   },
+  pdf: {
+    type: Schema.ObjectId,
+  },
   created: {
     type: Date,
     default: Date.now

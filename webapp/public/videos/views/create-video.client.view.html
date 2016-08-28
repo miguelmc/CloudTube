@@ -2,7 +2,7 @@
   <h1>New Video</h1>
   <md-content layout-padding id="new-issue-form" >
     <form name="newEntry" 
-          data-ng-submit="newEntry.$valid && ctrl.selectedItem && create(ctrl.selectedItem)" novalidate>
+          data-ng-submit="create()" novalidate>
         <h3 ng-bind="titleEn"></h3>
 
         <md-input-container class="md-block" flex-gt-sm>
@@ -14,7 +14,7 @@
         </md-input-container>
 
         <md-input-container class="md-block" flex-gt-sm>
-          <button ngf-select="upload($file)" multiple
+          <button ngf-select="addVideoPdf($files, $invalidFiles)" multiple
             > <!--ngf-max-height="1000" ngf-max-size="1MB">-->
             Upload file</button>
             <ul>
@@ -28,6 +28,7 @@
               </li> 
             </ul>
         </md-input-container>
+
 
       <md-button type="submit" class="md-raised">Submit</md-button>
       <div data-ng-show="error" class="put-center">

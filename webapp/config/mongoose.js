@@ -1,6 +1,8 @@
 var config = require('./config'),
-    mongoose = require('mongoose')
+    mongoose = require('mongoose'),
+    Grid = require('gridfs-stream');
 
+Grid.mongo = mongoose.mongo;
 
 var db = mongoose.createConnection(config.db);
 
@@ -9,6 +11,7 @@ db.on('error', function(err) {
 });
 
 db.once('open', function() {
+  this.gfs = Grid(db.db);
   console.log("Succeeded connected to: " + config.db);
 });
 
